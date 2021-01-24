@@ -11,3 +11,7 @@
 * Docker-compose 1.27.4
 * nginx 1.18.0
 * mysql 8.0.23
+
+
+## テーブル設計
+

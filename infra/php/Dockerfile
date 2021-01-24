@@ -14,4 +14,7 @@ RUN apt-get update && \
 
 COPY ./php.ini /usr/local/etc/php/php.ini
 
+COPY --from=node:12.20 /usr/local/bin /usr/local/bin
+COPY --from=node:12.20 /usr/local/lib /usr/local/lib
+
 WORKDIR /work
