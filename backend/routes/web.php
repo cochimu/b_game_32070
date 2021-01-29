@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GameController;
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,9 +25,9 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 */
 
-Route::get('/login', 'App\Http\Controllers\Auth\LoginController@showLoginForm')->name('login.index');
-Route::get('/user', 'App\Http\Controllers\Auth\RegisterController@showRegistrationForm')->name('user.register');
-Route::post('/user/register', 'App\Http\Controllers\Auth\RegisterController@register')->name('user.exec.register');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.index');
+Route::get('/user', [RegisterController::class, 'showRegistrationForm'])->name('user.register');
+Route::post('/user/register', [RegisterController::class, 'register'])->name('user.exec.register');
 Route::get('/', [GameController::class, 'index'])->name('game.index');
 
 Auth::routes();
