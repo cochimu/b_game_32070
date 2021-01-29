@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+/*トップ画像*/
+.top-box {
+  width: 100vw;
+}
+.image-box {
+  text-align: center;
+}
+
+/*検索窓*/
+.search-box {
+  margin-top: 10px;
+  height: 100px;
+  background-color: cornflowerblue;
+}
+
+/*新着投稿一覧*/
+.game-lists {
+  margin-top: 10px;
+  height: 200px;
+  background-color: darkgray;
+}
