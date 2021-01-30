@@ -11,6 +11,12 @@
 
 </div>
 
+<div class="add-box">
+  <a href="{{ route('game.create') }}" class="add-btn">
+    投稿
+  </a>
+</div>
+
 <div class="game-lists">
   
 </div>
