@@ -15,3 +15,31 @@
 
 ## テーブル設計
 
+## users テーブル
+
+| Column     | Type   | Options     |
+| ---------- | ------ | ----------- |
+| id         |        |             |
+| name       | string | null: false |
+| email      | string | null: false |
+| password   | string | null: false |
+
+### Association
+
+- has_many :games
+
+## memos テーブル
+
+| Column          | Type       | Options                        |
+| --------------- | ------ --- | ------------------------------ |
+| id              |            |                                |
+| user_id         | bigInteger | null: false, foreign_key: true |
+| name            | string     | null: false                    |
+| describe        | text       | null: false                    |
+| play_time       | integer    | null: false                    |
+| players_minimum | integer    | null: false                    |
+| players_max     | integer    | null: false                    |
+
+### Association
+
+- belongs_to :user
