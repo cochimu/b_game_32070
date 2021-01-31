@@ -29,7 +29,8 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.ind
 Route::get('/user', [RegisterController::class, 'showRegistrationForm'])->name('user.register');
 Route::post('/user/register', [RegisterController::class, 'register'])->name('user.exec.register');
 
-Route::resource('/', 'GameController');
+Route::get('/', [GameController::class, 'index']);
+Route::resource('/game', App\Http\Controllers\GameController::class)->only(['create']);
 
 
 Auth::routes();
