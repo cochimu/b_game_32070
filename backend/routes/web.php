@@ -29,11 +29,7 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login.ind
 Route::get('/user', [RegisterController::class, 'showRegistrationForm'])->name('user.register');
 Route::post('/user/register', [RegisterController::class, 'register'])->name('user.exec.register');
 
+Route::resource('/', 'GameController');
 
-Route::resource('game', 'GamesController', ['only' => ['index', 'create']]);
-/*
-Route::get('/', [GameController::class, 'index'])->name('game.index');
-Route::get('/form', [GameController::class, 'create'])->name('game.create');
-*/
 
 Auth::routes();
