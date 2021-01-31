@@ -7,6 +7,7 @@
 <form action="{{ route('game.store') }}" method="POST" id="new">
   @csrf
   <P>名前：<input type="text" name="name" value="{{old('name')}}"></p>
+  <input type='file' name="image" accept="image/png, image/jpeg">
   <p>商品説明：<textarea id="new" name="describe" value="{{old('describe')}}"></textarea></p>
   <p>プレイ時間：<input type="number" name="play_time" value="{{old('play_time')}}"></p>
   <p>最小プレイ人数：<input type="number" name="player_minimum" value="{{old('player_minimum')}}"></p>

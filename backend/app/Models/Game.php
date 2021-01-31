@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Game extends Model
 {
     use HasFactory;
+
+    protected $table = "game";
+	protected $fillable = ["file_name","file_path"];
 }

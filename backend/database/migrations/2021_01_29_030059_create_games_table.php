@@ -21,6 +21,8 @@ class CreateGamesTable extends Migration
             $table->integer('play_time');
             $table->integer('players_minimum');
             $table->integer('players_max');
+            $table->string("file_name");
+            $table->string("file_path");
             $table->timestamps();
         });
     }
