@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use Storage;
 
 class GameController extends Controller
 {
@@ -36,8 +37,14 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        Game::create($request->all());
-        return redirect()->route('game.index')->with('success', '新規登録完了しました');
+        $game = new Game;
+        $form = $request->all();
+
+        $image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/', $image, 'public');
+        $post->file_path = Storage::disk('s3')->url($path);
+        $post->save();
+        return redirect('games/index');
     }
 
     /**
