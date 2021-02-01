@@ -36,7 +36,8 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Game::create($request->all());
+        return redirect()->route('game.index')->with('success', '新規登録完了しました');
     }
 
     /**
@@ -47,6 +48,7 @@ class GameController extends Controller
      */
     public function show($id)
     {
+        $game = Game::find($id);
         return view('game.show');
     }
 
