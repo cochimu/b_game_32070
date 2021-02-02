@@ -37,7 +37,22 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $game = new Game;
+        $name = $request->input('name');
+        $describe = $request->input('describe');
+        $play_time = $request->input('play_time');
+        $player_minimum = $request->input('player_minimum');
+        $player_max = $request->input('player_max');
+
+        return view('game.index')->with([
+            "name" => $name,
+            "describe" => $describe,
+            "play_time" => $player_minimum,
+            "player_minimum" => $player_minimum,
+            "player_max" => $player_max,
+        ]);
+
+
+        /*$game = new Game;
         $form = $request->all();
 
         $image = $request->file('image');
@@ -45,6 +60,7 @@ class GameController extends Controller
         $post->file_path = Storage::disk('s3')->url($path);
         $post->save();
         return redirect('games/index');
+        */
     }
 
     /**
