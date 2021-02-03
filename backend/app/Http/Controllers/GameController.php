@@ -48,7 +48,7 @@ class GameController extends Controller
         $game->players_max = $input["players_max"];
         $game->save();
 
-        return redirect('games/index');
+        return redirect('/');
 
         /*$game = new Game;
         $form = $request->all();
