@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use Illuminate\Support\Facades\Auth;
 use Storage;
 
 class GameController extends Controller
@@ -39,26 +40,26 @@ class GameController extends Controller
     {
         $input = $request->only('user_id', 'name', 'describe', 'play_time', 'players_minimum', 'players_max');
         
+
         $game = new Game();
-        $game->user_id = $input["user_id"];
+        $game->user_id = Auth::id();
         $game->name = $input["name"];
         $game->describe = $input["describe"];
         $game->play_time = $input["play_time"];
         $game->players_minimum = $input["players_minimum"];
         $game->players_max = $input["players_max"];
-        $game->save();
-
-        return redirect('/');
-
-        /*$game = new Game;
-        $form = $request->all();
 
         $image = $request->file('image');
         $path = Storage::disk('s3')->putFile('/', $image, 'public');
         $post->file_path = Storage::disk('s3')->url($path);
-        $post->save();
-        return redirect('games/index');
-        */
+        
+        $game->save();
+
+        return redirect('/');
+
+
+        
+
     }
 
     /**
