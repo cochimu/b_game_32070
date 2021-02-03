@@ -30,7 +30,7 @@ Route::get('/user', [RegisterController::class, 'showRegistrationForm'])->name('
 Route::post('/user/register', [RegisterController::class, 'register'])->name('user.exec.register');
 
 Route::get('/', [GameController::class, 'index']);
-Route::resource('/game', App\Http\Controllers\GameController::class)->only(['create','store']);
+Route::resource('/game', App\Http\Controllers\GameController::class)->only(['create','store','show','edit','update','destroy']);
 
 
 Auth::routes();

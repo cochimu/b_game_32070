@@ -15,6 +15,8 @@ return [
 
     'default' => env('FILESYSTEM_DRIVER', 'local'),
 
+    'cloud' => env('FILESYSTEM_CLOUD', 's3'),
+
     /*
     |--------------------------------------------------------------------------
     | Filesystem Disks
@@ -67,6 +69,7 @@ return [
 
     'links' => [
         public_path('storage') => storage_path('app/public'),
+        public_path('images') => storage_path('app/images'),
     ],
 
 ];
