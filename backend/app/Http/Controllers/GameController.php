@@ -37,20 +37,18 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $name = $request->input('name');
-        $describe = $request->input('describe');
-        $play_time = $request->input('play_time');
-        $player_minimum = $request->input('player_minimum');
-        $player_max = $request->input('player_max');
+        $input = $request->only('user_id', 'name', 'describe', 'play_time', 'players_minimum', 'players_max');
+        
+        $game = new Game();
+        $game->user_id = $input["user_id"];
+        $game->name = $input["name"];
+        $game->describe = $input["describe"];
+        $game->play_time = $input["play_time"];
+        $game->players_minimum = $input["players_minimum"];
+        $game->players_max = $input["players_max"];
+        $game->save();
 
-        return view('game.index')->with([
-            "name" => $name,
-            "describe" => $describe,
-            "play_time" => $player_minimum,
-            "player_minimum" => $player_minimum,
-            "player_max" => $player_max,
-        ]);
-
+        return redirect('games/index');
 
         /*$game = new Game;
         $form = $request->all();
