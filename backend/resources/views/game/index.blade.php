@@ -3,7 +3,7 @@
 @section('content')
 <div class="top-box">
   <div class="image-box">
-    <img src="image/top.jpg" alt="トップ画像">
+    <img src="image/top.jpg" alt="トップ画像" width="100%" height="500px">
   </div>
 </div>
 
