@@ -29,12 +29,12 @@
 
   <div>
     <label>最小プレイ人数</label><br />
-    <input type="number" name="players_minimum" value="{{old('player_minimum')}}">
+    <input type="number" name="players_minimum" value="{{old('players_minimum')}}">
   </div>
 
   <div>
     <label>最大プレイ人数</label><br />
-    <input type="text" name="players_max" value="{{old('player_max')}}">
+    <input type="text" name="players_max" value="{{old('players_max')}}">
   </div>
 
   <input type="submit" value="登録する">
