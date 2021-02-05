@@ -31,7 +31,7 @@
 ## memos テーブル
 
 | Column          | Type       | Options                        |
-| --------------- | ------ --- | ------------------------------ |
+| --------------- | ---------- | ------------------------------ |
 | id              |            |                                |
 | user_id         | bigInteger | null: false, foreign_key: true |
 | name            | string     | null: false                    |

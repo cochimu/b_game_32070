@@ -18,8 +18,7 @@ class Game extends Model
         "play_time",
         "players_minimum",
         "players_max",
-        "file_name",
-        "file_path",
+        "image_path",
         "updated_at",
         "created_at",
     ];

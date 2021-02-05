@@ -38,7 +38,7 @@ class GameController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->only('user_id', 'name', 'describe', 'play_time', 'players_minimum', 'players_max', 'file_name', 'file_path');
+        $input = $request->only('user_id', 'name', 'describe', 'play_time', 'players_minimum', 'players_max',  'image_path');
         
 
         $game = new Game();
