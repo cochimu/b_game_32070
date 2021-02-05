@@ -4,7 +4,7 @@
 
 <h1>新規作成</h1>
 
-<form action="{{ route('game.store') }}" method="POST" id="new">
+<form action="{{ route('game.store') }}" enctype="multipart/form-data" method="POST" id="new">
   @csrf
 
   <div>

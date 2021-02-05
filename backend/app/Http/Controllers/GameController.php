@@ -51,7 +51,7 @@ class GameController extends Controller
 
         $image = $request->file('image');
         $path = Storage::disk('s3')->putFile('bgama32070', $image, 'public');
-        $post->image_path = Storage::disk('s3')->url($path);
+        $game->image_path = Storage::disk('s3')->url($path);
         
 
         $game->save();
