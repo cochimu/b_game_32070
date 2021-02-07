@@ -21,7 +21,14 @@
   @foreach($games as $game)
     @if($game->image_path)
       <div class="game-lists">
-        <img src="{{ $game->image_path }}">
+        <ul>
+          <li>
+            <img src="{{ $game->image_path }}">
+          </li>
+          <li>
+            {{ $game->name}}
+          </li>
+        </ul>
       </div>
     @endif
   @endforeach
