@@ -1,43 +1,97 @@
 @extends('layouts.app')
 
 @section('content')
+<div class="container mt-4">
+  <div class="border p-4">
+    <h1 class="h4 mb-4 font-weight-bold">新規作成</h1>
 
-<h1>新規作成</h1>
+    <form action="{{ route('game.store') }}" enctype="multipart/form-data" method="POST" id="new">
+      @csrf
 
-<form action="{{ route('game.store') }}" enctype="multipart/form-data" method="POST" id="new">
-  @csrf
+      <fieldset class="mb-4">
 
-  <div>
-    <label>ボードゲーム名</label><br />
-    <input type="text" name="name" value="{{old('name')}}">
+        <div class="form-group">
+          <label for="subject">
+            ボードゲーム名
+          </label>
+          <input
+            id="name"
+            type="text"
+            name="name"
+            value="{{old('name')}}"
+            class="form-control"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="subject">
+            商品説明
+          </label>
+          <textarea
+            id="new"
+            name="describe"
+            value="{{old('describe')}}"
+            class="form-control"
+            rows="4"
+          >
+          </textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="subject">
+            プレイ時間
+          </label>
+          <input
+            type="number"
+            name="play_time"
+            value="{{old('play_time')}}"
+            class="form-control"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="subject">
+            最小プレイ人数
+          </label>
+          <input
+            type="number"
+            name="players_minimum"
+            value="{{old('players_minimum')}}"
+            class="form-control"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="subject">
+            最大プレイ人数
+          </label>
+          <input
+            type="text"
+            name="players_max"
+            value="{{old('players_max')}}"
+            class="form-control"
+          >
+        </div>
+
+        <div>
+          <label>
+            商品画像
+          </label>
+          <input
+            id="image"
+            type='file'
+            name="image"
+            accept="image/png, image/jpeg"
+            class="form-control"
+          >
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+          投稿する
+        </button>
+  
+      </fieldset>
+    </form>
   </div>
-
-  <div>
-    <label>商品画像</label><br />
-    <input type='file' name="image" accept="image/png, image/jpeg">
-  </div>
-
-  <div>
-    <label>商品説明</label><br />
-    <textarea id="new" name="describe" value="{{old('describe')}}"></textarea>
-  </div>
-
-  <div>
-    <label>プレイ時間</label><br />
-    <input type="number" name="play_time" value="{{old('play_time')}}">
-  </div>
-
-  <div>
-    <label>最小プレイ人数</label><br />
-    <input type="number" name="players_minimum" value="{{old('players_minimum')}}">
-  </div>
-
-  <div>
-    <label>最大プレイ人数</label><br />
-    <input type="text" name="players_max" value="{{old('players_max')}}">
-  </div>
-
-  <input type="submit" value="登録する">
-
-</form>
+</div>
 @endsection
