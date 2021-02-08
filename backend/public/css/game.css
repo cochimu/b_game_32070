@@ -2,21 +2,6 @@
   box-sizing: border-box;
 }
 
-/*トップ画像*/
-.top-box {
-  width: 100vw;
-}
-.image-box {
-  text-align: center;
-}
-
-/*検索窓*/
-.search-box {
-  margin-top: 10px;
-  height: 100px;
-  background-color: cornflowerblue;
-}
-
 /*投稿ボタンなど*/
 .add-box {
   margin-top: 10px;

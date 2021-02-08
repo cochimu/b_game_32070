@@ -32,7 +32,7 @@
             name="describe"
             value="{{old('describe')}}"
             class="form-control"
-            rows="4"
+            rows="8"
           >
           </textarea>
         </div>
@@ -73,16 +73,15 @@
           >
         </div>
 
-        <div>
-          <label>
+        <div class="form-group">
+          <label for="exampleInputFile">
             商品画像
-          </label>
+          </label><br />
           <input
             id="image"
             type='file'
             name="image"
             accept="image/png, image/jpeg"
-            class="form-control"
           >
         </div>
 
