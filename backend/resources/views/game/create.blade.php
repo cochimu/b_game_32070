@@ -76,12 +76,13 @@
         <div class="form-group">
           <label for="exampleInputFile">
             商品画像
-          </label><br />
+          </label>
           <input
             id="image"
             type='file'
             name="image"
             accept="image/png, image/jpeg"
+            class="form-control-file"
           >
         </div>
 
