@@ -1,10 +1,11 @@
 @extends('common.common')
 
+
 <body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="public/img/logo.jpg" alt="" /></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../../public/img/logo.jpg" alt="" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -57,14 +58,15 @@
         </header>
 
         <!--新着一覧-->
-        @foreach($games as $game)
-        @if($game->image_path)
+        
         <section class="page-section bg-light" id="portfolio">
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">新着ボードゲーム</h2>
                     <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
                 </div>
+                @foreach($games as $game)
+                @if($game->image_path)
                 <div class="row">
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item">
@@ -81,14 +83,17 @@
                         </div>
                     </div>
                 </div>
+                @endif
+                @endforeach
             </div>
         </section>
 
         <!-- Modal -->
+        @foreach($games as $game)
+        @if($game->image_path)
         <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="close-modal" data-dismiss="modal"><img src="../../public/img/close-icon.svg" alt="Close modal" /></div>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-lg-8">
@@ -134,5 +139,4 @@
                 </div>
             </div>
       </footer>
-  
 </body>
