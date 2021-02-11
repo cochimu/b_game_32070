@@ -51,7 +51,7 @@
         <header class="masthead">
             <div class="container">
                 <div class="masthead-subheading">Welcome To B_GAME!</div>
-                <div class="masthead-heading text-uppercase">ボードゲーム探しも紹介もB_GAME</div>
+                <div class="masthead-heading text-uppercase">ボードゲーム好きが集まる場所B_GAME</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ route('game.create') }}">投稿する</a>
             </div>
         </header>
@@ -71,7 +71,7 @@
                     <div class="col-lg-4 col-sm-6 mb-4">
                         <div class="portfolio-item" style="text-align:center">
                             <a class="portfolio-link" href="{{ route('game.show', $game->id) }}">
-                                <img src="{{ $game->image_path }}" height="200px" width="200">
+                                <img src="{{ $game->image_path }}" height="200" width="200">
                             </a>
                             <div class="portfolio-caption" style="margin-top:10px">
                                 <div class="portfolio-caption-heading">{{ $game->name }}</div>
