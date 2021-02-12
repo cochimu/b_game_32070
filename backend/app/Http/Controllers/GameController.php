@@ -56,7 +56,7 @@ class GameController extends Controller
 
         $game->save();
 
-        return redirect('/');
+        return redirect('/')->with('success', '新規登録完了しました');;
 
     }
 
@@ -80,7 +80,8 @@ class GameController extends Controller
      */
     public function edit($id)
     {
-        //
+        $game = Game::find($id);
+        return view('game.edit', compact('game'));
     }
 
     /**
@@ -92,7 +93,21 @@ class GameController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $game = Game::find($id);
+        $game->user_id = Auth::id();
+        $game->name = $request->input('name');
+        $game->describe = $request->input('describe');
+        $game->play_time = $request->input('play_time');
+        $game->players_minimum = $request->input('players_minimum');
+        $game->players_max = $request->input('players_max');
+
+        $image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('bgama32070', $image, 'public');
+        $game->image_path = Storage::disk('s3')->url($path);
+        
+        $game->save();
+
+        return redirect('/')->with('success', '更新完了しました');
     }
 
     /**

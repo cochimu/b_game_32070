@@ -29,6 +29,14 @@
             </table>
             </div>
         </div>
+        <div class="mb-4 text-center" style="margin-top:10px">
+            <a href="{{ route('game.edit', $game->id) }}" class="btn btn-primary">
+            編集する
+            </a>
+            <a href="" class="btn btn-primary">
+            削除する
+            </a>
+        </div>
     </div>
 </div>
 
