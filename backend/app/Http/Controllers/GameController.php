@@ -56,7 +56,7 @@ class GameController extends Controller
 
         $game->save();
 
-        return redirect('/')->with('success', '新規登録完了しました');;
+        return redirect('/')->with('success', '投稿しました');;
 
     }
 
@@ -107,7 +107,7 @@ class GameController extends Controller
         
         $game->save();
 
-        return redirect('/')->with('success', '更新完了しました');
+        return redirect('/')->with('success', '更新しました');
     }
 
     /**
@@ -118,6 +118,7 @@ class GameController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Game::where('id', $id)->delete();
+        return redirect('/')->with('success', '削除しました');
     }
 }

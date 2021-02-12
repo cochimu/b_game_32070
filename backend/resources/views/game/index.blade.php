@@ -4,7 +4,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../public/img/logo.png" alt="" /></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../../public/img/logo.png" alt="" /></a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -49,6 +49,11 @@
 
         <!-- Masthead-->
         <header class="masthead">
+            @if (session('success'))
+                <div class="alert alert-primary mx-auto" style="width: 300px;" role="alert">
+                    {{ session('success') }}
+                </div>
+            @endif
             <div class="container">
                 <div class="masthead-subheading">Welcome To B_GAME!</div>
                 <div class="masthead-heading text-uppercase">ボードゲーム好きが集まる場所B_GAME</div>
