@@ -33,9 +33,15 @@
             <a href="{{ route('game.edit', $game->id) }}" class="btn btn-primary">
             編集する
             </a>
-            <a href="" class="btn btn-primary">
-            削除する
-            </a>
+            <form
+                style="display: inline-block;"
+                method="POST"
+                action="{{ route('game.destroy', $game->id) }}"
+                >
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger">削除する</button>
+            </form>
         </div>
     </div>
 </div>
