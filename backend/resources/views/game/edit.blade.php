@@ -87,7 +87,7 @@
         </div>
 
         <button type="submit" class="btn btn-primary">
-          投稿する
+          編集する
         </button>
   
       </fieldset>
