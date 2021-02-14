@@ -65,6 +65,6 @@ class RegisterController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        return redirect()->route('game.index');
+        return redirect()->route('/');
     }
 }
