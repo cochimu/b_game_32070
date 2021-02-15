@@ -79,8 +79,9 @@ URL：http://54.150.112.224:10080/
 ### Association
 
 - has_many :games
+- has_many :comments
 
-## memos テーブル
+## games テーブル
 
 | Column          | Type       | Options                        |
 | --------------- | ---------- | ------------------------------ |
@@ -95,3 +96,18 @@ URL：http://54.150.112.224:10080/
 ### Association
 
 - belongs_to :user
+- has_many :comments
+
+## comments テーブル
+
+| Column  | Type       | Options                        |
+| ------- | ---------- | ------------------------------ |
+| id      |            |                                |
+| user_id | bigInteger | null: false, foreign_key: true |
+| game_id | bigInteger | null: false, foreign_key: true |
+| text    | text       | null: false                    |
+
+### Association
+
+- belongs_to :user
+- belongs_to :game

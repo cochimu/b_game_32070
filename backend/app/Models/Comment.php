@@ -5,20 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Game extends Model
+class Comment extends Model
 {
     use HasFactory;
 
-    protected $table = "games";
+    protected $table = "comments";
 	protected $fillable = [
         "id",
         "user_id",
-        "name",
-        "describe",
-        "play_time",
-        "players_minimum",
-        "players_max",
-        "image_path",
+        "game_id",
+        "text",
         "updated_at",
         "created_at",
     ];
@@ -28,8 +24,8 @@ class Game extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function comments()
+    public function game()
     {
-        return $this->hasMany(Comments::class);
+        return $this->belongsTo(Game::class);
     }
 }
