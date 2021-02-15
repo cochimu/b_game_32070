@@ -4,7 +4,7 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
             <div class="container">
-            <a class="navbar-brand js-scroll-trigger" href="#page-top"><img src="../../../public/img/logo.png" alt="" /></a>
+            <a class="navbar-brand js-scroll-trigger" href="#page-top">B_GAME</a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars ml-1"></i>
@@ -56,7 +56,7 @@
             @endif
             <div class="container">
                 <div class="masthead-subheading">Welcome To B_GAME!</div>
-                <div class="masthead-heading text-uppercase">ボードゲーム好きが集まる場所B_GAME</div>
+                <div class="masthead-heading text-uppercase">ボードゲーム好きは集まれ</div>
                 <a class="btn btn-primary btn-xl text-uppercase js-scroll-trigger" href="{{ route('game.create') }}">投稿する</a>
             </div>
         </header>
@@ -67,7 +67,7 @@
             <div class="container">
                 <div class="text-center">
                     <h2 class="section-heading text-uppercase">新着ボードゲーム</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                    <h3 class="section-subheading text-muted">Find fun For you</h3>
                 </div>
                 
                 <div class="row">
@@ -96,7 +96,7 @@
         <footer class="footer py-4">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-lg-4 text-lg-left">Copyright © Your Website 2020</div>
+                    <div class="col-lg-4 text-lg-left">Copyright © B_GAME 2021</div>
                     <div class="col-lg-4 my-3 my-lg-0">
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
