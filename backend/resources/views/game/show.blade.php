@@ -2,7 +2,13 @@
 
 @section('content')
 
-<div class="container">
+<div class="container mt-4">
+
+    @if (session('success'))
+        <div class="alert alert-primary mx-auto" style="width: 300px;" role="alert">
+            {{ session('success') }}
+        </div>
+    @endif
     <div class="border p-4">
         <div class="row">
             <div class="col-sm-6 col-lg-6" id="left-box" style="text-align:center">
@@ -44,6 +50,46 @@
             </form>
         </div>
     </div>
+
+    <div class="border p-4" style="margin-top:10px">
+        <div class="row">
+            <fieldset class="mb-4">
+                <form action="{{ route('game.comments.store', $game->id) }}" method="POST" id="comment">
+                    @csrf
+
+                    <input
+                        name="game_id"
+                        type="hidden"
+                        value="{{ $game->id }}"
+                    >
+
+                    <div class="form-group">
+                        <label for="body">
+                            {{ $user }}
+                        </label>
+                        <textarea
+                            id="comment"
+                            name="comment"
+                            class="form-control"
+                            rows="2"
+                        >{{ old('comment') }}</textarea>
+                    </div>
+
+                    <div class="mt-4 text-center">
+                        <button type="submit" class="btn btn-primary">
+                            コメントする
+                        </button>
+                    </div>
+                </form>
+             </fieldset>
+        </div>
+    </div>
+
+    <section>
+            <h2 class="h5 mb-4">
+                コメント
+            </h2>
+    </section>
 </div>
 
 @endsection

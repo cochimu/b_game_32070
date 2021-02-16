@@ -14,6 +14,7 @@ class Comment extends Model
         "id",
         "user_id",
         "game_id",
+        "name",
         "text",
         "updated_at",
         "created_at",

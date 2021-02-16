@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Game;
+use App\Models\Comment;
 use Illuminate\Support\Facades\Auth;
 use Storage;
 
@@ -52,11 +53,10 @@ class GameController extends Controller
         $image = $request->file('image');
         $path = Storage::disk('s3')->putFile('bgama32070', $image, 'public');
         $game->image_path = Storage::disk('s3')->url($path);
-        
 
         $game->save();
 
-        return redirect('/')->with('success', '投稿しました');;
+        return redirect('/')->with('success', '投稿しました');
 
     }
 
@@ -69,7 +69,8 @@ class GameController extends Controller
     public function show($id)
     {
         $game = Game::find($id);
-        return view('game.show', compact('game'));
+        $user = Auth::user();
+        return view('game.show', compact('game','user'));
     }
 
     /**

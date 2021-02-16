@@ -13,7 +13,7 @@ class CommentController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
     /**
@@ -34,7 +34,17 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input = $request->only('user_id', 'game_id', 'text');
+
+        $comment = new Comment();
+        $comment->user_id = Auth::id();
+        $comment->user_name = Auth::name();
+        $comment->game_id = $input["game_id"];
+        $comment->text = $input["text"];
+
+        $game->save();
+
+        return redirect('game.show', $game->id)->with('success', 'コメントしました');
     }
 
     /**
