@@ -51,6 +51,28 @@
         </div>
     </div>
 
+    <section>
+        <h2 class="h5 mb-4">
+            コメント
+        </h2>
+
+        @if($comments)
+            @foreach ($comments as $comment)
+            <div class="border-top p-4">
+                <p class="mt-2">
+                    {{ $comment->name }} / 
+                </p>
+                <p class="mt-2">
+                    {{ $comment->text }}
+                </p>
+            </div>
+            @endforeach
+        @else
+            <p>コメントはまだありません</p>
+        @endif
+    </section>
+
+
     <div class="border p-4" style="margin-top:10px">
         <div class="row">
             <fieldset class="mb-4">
@@ -64,12 +86,26 @@
                     >
 
                     <div class="form-group">
+                        <label for="subject">
+                            お名前
+                        </label>
+
+                        <input
+                            id="name"
+                            name="name"
+                            class="form-control"
+                            value="{{ old('name') }}"
+                            type="text"
+                        >
+                    </div>
+
+                    <div class="form-group">
                         <label for="body">
-                            {{ $user }}
+                            コメント
                         </label>
                         <textarea
                             id="comment"
-                            name="comment"
+                            name="text"
                             class="form-control"
                             rows="2"
                         >{{ old('comment') }}</textarea>
@@ -84,12 +120,5 @@
              </fieldset>
         </div>
     </div>
-
-    <section>
-            <h2 class="h5 mb-4">
-                コメント
-            </h2>
-    </section>
 </div>
-
 @endsection

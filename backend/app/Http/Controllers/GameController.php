@@ -69,8 +69,8 @@ class GameController extends Controller
     public function show($id)
     {
         $game = Game::find($id);
-        $user = Auth::user();
-        return view('game.show', compact('game','user'));
+        $comments = Comment::find($id);
+        return view('game.show', compact('game', 'comments'));
     }
 
     /**

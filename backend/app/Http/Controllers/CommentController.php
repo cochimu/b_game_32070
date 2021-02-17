@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Comment;
 
 class CommentController extends Controller
 {
@@ -34,15 +35,13 @@ class CommentController extends Controller
      */
     public function store(Request $request)
     {
-        $input = $request->only('user_id', 'game_id', 'text');
+        $input = $request->only('game_id', 'name','text');
 
         $comment = new Comment();
-        $comment->user_id = Auth::id();
-        $comment->user_name = Auth::name();
         $comment->game_id = $input["game_id"];
+        $comment->name = $input["name"];
         $comment->text = $input["text"];
-
-        $game->save();
+        $comment->save();
 
         return redirect('game.show', $game->id)->with('success', 'コメントしました');
     }
