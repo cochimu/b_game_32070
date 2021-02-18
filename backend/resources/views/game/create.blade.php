@@ -5,7 +5,7 @@
   <div class="border p-4">
     <h1 class="h4 mb-4 font-weight-bold">新規作成</h1>
 
-    <form action="{{ route('game.store') }}" enctype="multipart/form-data" method="POST" id="new">
+    <form action="{{ route('game.store') }}" enctype="multipart/form-data" method="POST">
       @csrf
 
       <fieldset class="mb-4">
@@ -24,11 +24,11 @@
         </div>
 
         <div class="form-group">
-          <label for="subject">
+          <label for="describe">
             商品説明
           </label>
           <textarea
-            id="new"
+            id="describe"
             name="describe"
             value="{{old('describe')}}"
             class="form-control"
@@ -74,7 +74,7 @@
         </div>
 
         <div class="form-group">
-          <label for="exampleInputFile">
+          <label for="image">
             商品画像
           </label>
           <input
