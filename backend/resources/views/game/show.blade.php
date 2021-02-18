@@ -49,76 +49,67 @@
                 <button class="btn btn-danger">削除する</button>
             </form>
         </div>
-    </div>
 
-    <section>
-        <h2 class="h5 mb-4">
-            コメント
-        </h2>
+        <section>
+            <h2 class="h5 mb-4">
+                コメント
+            </h2>
 
-        @if($comments)
-            @foreach ($comments as $comment)
-            <div class="border-top p-4">
-                <p class="mt-2">
-                    {{ $comment->name }} / 
-                </p>
-                <p class="mt-2">
-                    {{ $comment->text }}
-                </p>
-            </div>
-            @endforeach
-        @else
-            <p>コメントはまだありません</p>
-        @endif
-    </section>
+            <form action="{{ route('comment.store') }}" method="POST" class="mb-4">
+                @csrf
+                <input
+                    name="game_id"
+                    type="hidden"
+                    value="{{ $game->id }}"
+                >
 
-
-    <div class="border p-4" style="margin-top:10px">
-        <div class="row">
-            <fieldset class="mb-4">
-                <form action="{{ route('game.comments.store', $game->id) }}" method="POST" id="comment">
-                    @csrf
-
+                <div class="form-group">
+                    <label for="name">
+                        名前
+                    </label>
                     <input
-                        name="game_id"
-                        type="hidden"
-                        value="{{ $game->id }}"
+                        id="name"
+                        type="text"
+                        name="name"
+                        value="{{old('name')}}"
+                        class="form-control"
                     >
+                </div>
 
-                    <div class="form-group">
-                        <label for="subject">
-                            お名前
-                        </label>
+                <div class="form-group">
+                    <label for="text">
+                        コメント
+                    </label>
+                    <textarea
+                        id="text"
+                        name="text"
+                        class="form-control"
+                    >{{ old('text')}}</textarea>
+                </div>
 
-                        <input
-                            id="name"
-                            name="name"
-                            class="form-control"
-                            value="{{ old('name') }}"
-                            type="text"
-                        >
-                    </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary">
+                        コメントする
+                    </button>
+                </div>
+            </form>
 
-                    <div class="form-group">
-                        <label for="body">
-                            コメント
-                        </label>
-                        <textarea
-                            id="comment"
-                            name="text"
-                            class="form-control"
-                            rows="2"
-                        >{{ old('comment') }}</textarea>
-                    </div>
 
-                    <div class="mt-4 text-center">
-                        <button type="submit" class="btn btn-primary">
-                            コメントする
-                        </button>
-                    </div>
-                </form>
-             </fieldset>
-        </div>
+            
+                @foreach($comments as $comment)
+                <div class="border-top p-4">
+                    <time class="text-secondary">
+                        {{ $comment->created_at->format('Y.m.d H:i') }}
+                    </time>
+                    <p class="mt-2">
+                        {!! nl2br(e($comment->text)) !!}
+                    </p>
+                </div>
+                @endforeach
+            
+                <p>コメントはまだありません</p>
+            
+        </section>
     </div>
 </div>
 @endsection

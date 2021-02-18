@@ -17,7 +17,7 @@ class GameController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
+        $games = Game::orderBy('created_at', 'desc')->get();
         return view('game.index', compact('games'));
     }
 
@@ -41,7 +41,6 @@ class GameController extends Controller
     {
         $input = $request->only('user_id', 'name', 'describe', 'play_time', 'players_minimum', 'players_max',  'image_path');
         
-
         $game = new Game();
         $game->user_id = Auth::id();
         $game->name = $input["name"];
@@ -68,8 +67,8 @@ class GameController extends Controller
      */
     public function show($id)
     {
-        $game = Game::find($id);
-        $comments = Comment::find($id);
+        $game = Game::findOrFail($id);
+        $comments = Comment::all();
         return view('game.show', compact('game', 'comments'));
     }
 

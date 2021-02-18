@@ -3,7 +3,7 @@
 @section('content')
 <div class="container mt-4">
   <div class="border p-4">
-    <h1 class="h4 mb-4 font-weight-bold">新規作成</h1>
+    <h1 class="h4 mb-4 font-weight-bold">編集</h1>
 
     <form action="{{ route('game.update', $game->id) }}" enctype="multipart/form-data" method="POST" id="new">
       @csrf

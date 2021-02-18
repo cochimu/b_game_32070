@@ -31,7 +31,6 @@ Route::post('/user/register', [RegisterController::class, 'register'])->name('us
 
 Route::get('/', [GameController::class, 'index']);
 Route::resource('/game', App\Http\Controllers\GameController::class)->only(['create','store','show','edit','update','destroy']);
-Route::resource('game.comments', App\Http\Controllers\CommentController::class);
-
+Route::resource('comment', App\Http\Controllers\CommentController::class)->only(['store']);
 
 Auth::routes();
