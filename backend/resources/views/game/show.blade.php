@@ -35,6 +35,8 @@
             </table>
             </div>
         </div>
+
+        @if ($user_id == $game->user_id)
         <div class="mb-4 text-center" style="margin-top:10px">
             <a href="{{ route('game.edit', $game->id) }}" class="btn btn-primary">
             編集する
@@ -49,9 +51,10 @@
                 <button class="btn btn-danger">削除する</button>
             </form>
         </div>
+        @endif
 
         <section>
-            <h2 class="h5 mb-4">
+            <h2 class="h5 mb-4" style="margin-top:10px">
                 コメント
             </h2>
 

@@ -69,7 +69,8 @@ class GameController extends Controller
     {
         $game = Game::findOrFail($id);
         $comments = Comment::all();
-        return view('game.show', compact('game', 'comments'));
+        $user_id = Auth::id();
+        return view('game.show', compact('game', 'comments', 'user_id'));
     }
 
     /**
