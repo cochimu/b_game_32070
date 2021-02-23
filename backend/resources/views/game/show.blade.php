@@ -98,20 +98,20 @@
             </form>
 
 
-            
+            @if ($comments)
                 @foreach($comments as $comment)
-                <div class="border-top p-4">
-                    <time class="text-secondary">
-                        {{ $comment->created_at->format('Y.m.d H:i') }}
-                    </time>
-                    <p class="mt-2">
-                        {!! nl2br(e($comment->text)) !!}
-                    </p>
-                </div>
+                    @if ($comment->game_id == $game->id)
+                        <div class="border-top p-4">
+                            <time class="text-secondary">
+                                {{ $comment->created_at->format('Y.m.d H:i') }}
+                            </time>
+                            <p class="mt-2">
+                                {{ $comment->text }}
+                            </p>
+                        </div>
+                    @endif
                 @endforeach
-            
-                <p>コメントはまだありません</p>
-            
+            @endif
         </section>
     </div>
 </div>
