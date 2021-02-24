@@ -26,42 +26,57 @@ URL：http://54.150.112.224:10080/
 ## 機能
 
 - ユーザー管理機能
-* ユーザー新規登録
-* ログイン、ログアウト
+  ユーザー新規登録
+  ログイン、ログアウト
+  マイページ機能
 
 - 投稿機能(CRUD)
-* ボードゲームの投稿、編集、削除、一覧表示
-* 画像アップロード機能(AWS S3バケット)
+  ボードゲームの投稿、編集、削除、一覧表示
+  画像アップロード機能(AWS S3バケット)
 
 - コメント機能
-* 投稿に対してコメントできる
+  投稿に対してコメントできる
 
 - 検索機能
 実装中です。
 
 - レスポンシブデザイン
-* Bootstrap
+  Bootstrap
 
 
 ## 画面イメージ
 
+トップページ
+<img width="1424" alt="スクリーンショット 2021-02-24 23 47 54" src="https://user-images.githubusercontent.com/73867134/109018178-3bf96100-76fb-11eb-8769-0b5516d24db6.png">
+
+一覧画面
+<img width="1440" alt="スクリーンショット 2021-02-24 23 48 16" src="https://user-images.githubusercontent.com/73867134/109018304-55021200-76fb-11eb-8995-b63191b3a2a9.png">
+
+投稿フォーム
+<img width="1440" alt="スクリーンショット 2021-02-24 23 48 36" src="https://user-images.githubusercontent.com/73867134/109018393-6c40ff80-76fb-11eb-86ec-52d7e4a46c83.png">
+
+ユーザーマイページ
+<img width="1440" alt="スクリーンショット 2021-02-24 23 49 19" src="https://user-images.githubusercontent.com/73867134/109018524-8c70be80-76fb-11eb-8e93-ce64cf3bb261.png">
+
+詳細画面
+<img width="1440" alt="スクリーンショット 2021-02-24 23 49 56" src="https://user-images.githubusercontent.com/73867134/109018872-d063c380-76fb-11eb-9cec-20f413b28cbc.png">
 
 
 ## 使用技術
 - フロントエンド
-* HTML / CSS / Bootstrap
-* JavaScript
+  HTML / CSS / Bootstrap
+  JavaScript
 
 - バックエンド
-* PHP 7.4.14
-* Laravel 8.24.0
+  PHP 7.4.14
+  Laravel 8.24.0
 
 - インフラ
-* Docker 20.10.2
-* Docker-compose 1.27.4
-* nginx 1.18.0
-* mysql 8.0.23
-* AWS(EC2,S3,IAM)
+  Docker 20.10.2
+  Docker-compose 1.27.4
+  nginx 1.18.0
+  mysql 8.0.23
+  AWS(EC2,S3,IAM)
 
 
 ## テーブル設計
